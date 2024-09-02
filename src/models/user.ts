@@ -9,6 +9,7 @@ export class UserModel {
     const { data, error } = await supabase
       .from("users")
       .insert({ email, name })
+      .select()
       .single();
 
     if (error) {
